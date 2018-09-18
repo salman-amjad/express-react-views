@@ -18,17 +18,7 @@ var DEFAULT_OPTIONS = {
   beautify: false,
   transformViews: true,
   babel: {
-    presets: [
-      'react',
-      [
-        'env',
-        {
-          targets: {
-            node: 'current',
-          },
-        },
-      ],
-    ],
+    presets: ["@babel/preset-react", "@babel/preset-flow"],
   },
 };
 
@@ -54,9 +44,12 @@ function createEngine(engineOptions) {
     if (engineOptions.transformViews && !registered) {
       // Passing a RegExp to Babel results in an issue on Windows so we'll just
       // pass the view path.
-      require('babel-register')(
-        assign({only: options.settings.views}, engineOptions.babel)
+      require("@babel/register")(
+        assign({only: [options.settings.views]}, engineOptions.babel)
       );
+      // require('@babel/register')(
+      //   assign({only: options.settings.views}, engineOptions.babel)
+      // );
       registered = true;
     }
 
