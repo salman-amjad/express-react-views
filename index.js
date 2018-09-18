@@ -18,7 +18,7 @@ var DEFAULT_OPTIONS = {
   beautify: false,
   transformViews: true,
   babel: {
-    presets: ["@babel/preset-react", "@babel/preset-flow"],
+    presets: ["@babel/preset-env", "@babel/preset-react", "@babel/preset-flow"],
   },
 };
 

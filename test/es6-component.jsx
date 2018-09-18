@@ -1,5 +1,5 @@
-const React = require('react');
-const PropTypes = require('prop-types');
+import React from 'react';
+import PropTypes from 'prop-types';
 
 function countTo(n) {
   var a = [];
@@ -28,4 +28,4 @@ Index.propTypes = {
   title: PropTypes.string,
 };
 
-module.exports = Index;
+export default Index;
